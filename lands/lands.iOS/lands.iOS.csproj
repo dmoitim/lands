@@ -157,4 +157,7 @@
       <Name>lands</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\earth.png" />
+  </ItemGroup>
 </Project>
