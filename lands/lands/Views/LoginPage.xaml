@@ -5,7 +5,7 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Lands">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView BindingContext="{Binding Login}">
             <StackLayout Padding="5">
                 <Image Source="earth" HeightRequest="100"></Image>
 
@@ -20,23 +20,27 @@
                            Text="E-mail"></Label>
                     <Entry Grid.Row="0" Grid.Column="1"
                            Placeholder="Informe seu e-mail"
-                           Keyboard="Email"></Entry>
+                           Keyboard="Email"
+                           Text="{Binding Email, Mode=TwoWay}"></Entry>
 
                     <Label Grid.Row="1" Grid.Column="0"
                            VerticalOptions="Center"
                            Text="Senha"></Label>
                     <Entry Grid.Row="1" Grid.Column="1"
                            Placeholder="Informe sua senha"
-                           IsPassword="True"></Entry>
+                           IsPassword="True"
+                           Text="{Binding Senha, Mode=TwoWay}"></Entry>
                 </Grid>
 
-                <ActivityIndicator VerticalOptions="CenterAndExpand"></ActivityIndicator>
+                <ActivityIndicator VerticalOptions="CenterAndExpand"
+                                   IsRunning="{Binding Activity, Mode=TwoWay}"></ActivityIndicator>
 
                 <StackLayout Margin="10,0" Orientation="Horizontal"
                              VerticalOptions="CenterAndExpand">
                     <Label Text="Lembrar" VerticalOptions="Center"
                            HorizontalOptions="StartAndExpand"></Label>
-                    <Switch HorizontalOptions="End"></Switch>
+                    <Switch HorizontalOptions="End"
+                            IsToggled="{Binding Lembrar, Mode=TwoWay}"></Switch>
                 </StackLayout>
 
                 <Label Text="Esqueci minha senha"
@@ -48,11 +52,13 @@
                              VerticalOptions="CenterAndExpand">
                     <Button Text="Login" BackgroundColor="Navy"
                             HeightRequest="46" HorizontalOptions="FillAndExpand"
-                            TextColor="White" BorderRadius="23"></Button>
+                            TextColor="White" BorderRadius="23"
+                            Command="{Binding LoginCommand}"></Button>
 
                     <Button Text="Registrar" BackgroundColor="Purple"
                             HeightRequest="46" HorizontalOptions="FillAndExpand"
-                            TextColor="White" BorderRadius="23"></Button>
+                            TextColor="White" BorderRadius="23"
+                            Command="{Binding RegistrarCommand}"></Button>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal"
