@@ -53,11 +53,13 @@
                     <Button Text="Login" BackgroundColor="Navy"
                             HeightRequest="46" HorizontalOptions="FillAndExpand"
                             TextColor="White" BorderRadius="23"
+                            IsEnabled="{Binding Habilitado, Mode=TwoWay}"
                             Command="{Binding LoginCommand}"></Button>
 
                     <Button Text="Registrar" BackgroundColor="Purple"
                             HeightRequest="46" HorizontalOptions="FillAndExpand"
                             TextColor="White" BorderRadius="23"
+                            IsEnabled="{Binding Habilitado, Mode=TwoWay}"
                             Command="{Binding RegistrarCommand}"></Button>
                 </StackLayout>
 
