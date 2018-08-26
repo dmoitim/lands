@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lands.Android", "lands\land
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lands.iOS", "lands\lands.iOS\lands.iOS.csproj", "{66D2EF78-0A0F-4635-A744-3449802CF619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lands", "lands\lands\lands.csproj", "{957DCFFE-5699-44E8-8EC1-7B081E4C7FD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lands", "lands\lands\lands.csproj", "{957DCFFE-5699-44E8-8EC1-7B081E4C7FD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
