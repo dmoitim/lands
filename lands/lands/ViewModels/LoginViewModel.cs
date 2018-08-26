@@ -1,19 +1,25 @@
 ﻿namespace lands.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using lands.Views;
     using System.Windows.Input;
     using Xamarin.Forms;
 
     public class LoginViewModel : BaseViewModel
     {
         #region Attributes
+        private string email;
         private string senha;
         private bool activity;
         private bool habilitado;
         #endregion
 
         #region Properties
-        public string Email { get; set; }
+        public string Email
+        {
+            get { return this.email; }
+            set { SetValue(ref email, value); }
+        }
         public string Senha {
             get { return this.senha; }
             set { SetValue(ref senha, value); }
@@ -72,7 +78,7 @@
 
                 await Application.Current.MainPage.DisplayAlert(
                     "Erro",
-                    "Usuário ou senha inváidos.",
+                    "Usuário ou senha inválidos.",
                     "OK");
 
                 this.Senha = string.Empty;
@@ -82,11 +88,11 @@
 
             this.Activity = false;
             this.Habilitado = true;
+            this.Email = string.Empty;
+            this.Senha = string.Empty;
 
-            await Application.Current.MainPage.DisplayAlert(
-                "Sucesso",
-                "Seja bem vindo!",
-                "OK");
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
         }
         #endregion
 
