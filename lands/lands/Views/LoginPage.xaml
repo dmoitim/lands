@@ -67,7 +67,11 @@
                              HorizontalOptions="Center"
                              VerticalOptions="EndAndExpand">
                     <Image Source="facebook_logo"
-                           WidthRequest="50"></Image>
+                           WidthRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LoginFacebookCommand}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Image Source="twitter_logo"
                            WidthRequest="50"></Image>
                     <Image Source="instagram_logo"
